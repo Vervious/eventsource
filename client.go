@@ -45,6 +45,7 @@ func NewClient(w http.ResponseWriter) *Client {
 	w.Header().Set("Content-Type", "text/event-stream")
 	w.Header().Set("Cache-Control", "no-cache")
 	w.Header().Set("Connection", "keep-alive")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	flush.Flush()
 
 	// start the sending thread
